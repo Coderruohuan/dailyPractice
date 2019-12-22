@@ -1,0 +1,249 @@
+Classfile /E:/workspace/dailyPractice/bin/thread/NumCount.class
+  Last modified 2019-7-30; size 1210 bytes
+  MD5 checksum 3f8a98d9d45aea2c6e59b5c04719f9b4
+  Compiled from "SynchronizedClass.java"
+class thread.NumCount
+  minor version: 0
+  major version: 52
+  flags: ACC_SUPER
+Constant pool:
+   #1 = Class              #2             // thread/NumCount
+   #2 = Utf8               thread/NumCount
+   #3 = Class              #4             // java/lang/Object
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               synCount
+   #6 = Utf8               I
+   #7 = Utf8               count
+   #8 = Utf8               vCount
+   #9 = Utf8               <init>
+  #10 = Utf8               ()V
+  #11 = Utf8               Code
+  #12 = Methodref          #3.#13         // java/lang/Object."<init>":()V
+  #13 = NameAndType        #9:#10         // "<init>":()V
+  #14 = Utf8               LineNumberTable
+  #15 = Utf8               LocalVariableTable
+  #16 = Utf8               this
+  #17 = Utf8               Lthread/NumCount;
+  #18 = Utf8               getSynCount
+  #19 = Utf8               ()I
+  #20 = Fieldref           #1.#21         // thread/NumCount.synCount:I
+  #21 = NameAndType        #5:#6          // synCount:I
+  #22 = Utf8               setSynCount
+  #23 = Utf8               (I)V
+  #24 = Utf8               getCount
+  #25 = Fieldref           #1.#26         // thread/NumCount.count:I
+  #26 = NameAndType        #7:#6          // count:I
+  #27 = Utf8               setCount
+  #28 = Utf8               getvCount
+  #29 = Fieldref           #1.#30         // thread/NumCount.vCount:I
+  #30 = NameAndType        #8:#6          // vCount:I
+  #31 = Utf8               setvCount
+  #32 = Utf8               addCount
+  #33 = Utf8               addSynCount
+  #34 = Utf8               StackMapTable
+  #35 = Class              #36            // java/lang/Throwable
+  #36 = Utf8               java/lang/Throwable
+  #37 = Utf8               addVcount
+  #38 = Utf8               SourceFile
+  #39 = Utf8               SynchronizedClass.java
+{
+  private int synCount;
+    descriptor: I
+    flags: ACC_PRIVATE
+
+  private int count;
+    descriptor: I
+    flags: ACC_PRIVATE
+
+  private volatile int vCount;
+    descriptor: I
+    flags: ACC_PRIVATE, ACC_VOLATILE
+
+  thread.NumCount();
+    descriptor: ()V
+    flags:
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #12                 // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 50: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lthread/NumCount;
+
+  public int getSynCount();
+    descriptor: ()I
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #20                 // Field synCount:I
+         4: ireturn
+      LineNumberTable:
+        line 56: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lthread/NumCount;
+
+  public void setSynCount(int);
+    descriptor: (I)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: iload_1
+         2: putfield      #20                 // Field synCount:I
+         5: return
+      LineNumberTable:
+        line 60: 0
+        line 61: 5
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lthread/NumCount;
+            0       6     1 synCount   I
+
+  public int getCount();
+    descriptor: ()I
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #25                 // Field count:I
+         4: ireturn
+      LineNumberTable:
+        line 64: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lthread/NumCount;
+
+  public void setCount(int);
+    descriptor: (I)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: iload_1
+         2: putfield      #25                 // Field count:I
+         5: return
+      LineNumberTable:
+        line 68: 0
+        line 69: 5
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lthread/NumCount;
+            0       6     1 count   I
+
+  public int getvCount();
+    descriptor: ()I
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #29                 // Field vCount:I
+         4: ireturn
+      LineNumberTable:
+        line 72: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lthread/NumCount;
+
+  public synchronized void setvCount(int);
+    descriptor: (I)V
+    flags: ACC_PUBLIC, ACC_SYNCHRONIZED
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: iload_1
+         2: putfield      #29                 // Field vCount:I
+         5: return
+      LineNumberTable:
+        line 76: 0
+        line 77: 5
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lthread/NumCount;
+            0       6     1 vCount   I
+
+  public void addCount();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: dup
+         2: getfield      #25                 // Field count:I
+         5: iconst_1
+         6: iadd
+         7: putfield      #25                 // Field count:I
+        10: return
+      LineNumberTable:
+        line 80: 0
+        line 81: 10
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      11     0  this   Lthread/NumCount;
+
+  public void addSynCount();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=2, args_size=1
+         0: aload_0
+         1: dup
+         2: astore_1
+         3: monitorenter
+         4: aload_0
+         5: dup
+         6: getfield      #20                 // Field synCount:I
+         9: iconst_1
+        10: iadd
+        11: putfield      #20                 // Field synCount:I
+        14: aload_1
+        15: monitorexit
+        16: goto          22
+        19: aload_1
+        20: monitorexit
+        21: athrow
+        22: return
+      Exception table:
+         from    to  target type
+             4    16    19   any
+            19    21    19   any
+      LineNumberTable:
+        line 84: 0
+        line 85: 4
+        line 84: 14
+        line 87: 22
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      23     0  this   Lthread/NumCount;
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 19
+          locals = [ class thread/NumCount, class thread/NumCount ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 250 /* chop */
+          offset_delta = 2
+
+  public void addVcount();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: dup
+         2: getfield      #29                 // Field vCount:I
+         5: iconst_1
+         6: iadd
+         7: putfield      #29                 // Field vCount:I
+        10: return
+      LineNumberTable:
+        line 90: 0
+        line 91: 10
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      11     0  this   Lthread/NumCount;
+}
+SourceFile: "SynchronizedClass.java"
